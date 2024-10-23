@@ -8,17 +8,15 @@ A simple Python script to extract the table of contents (TOC) from PDF files and
 - PyMuPDF library
 
 ## Installation
-
-1. Clone or download this repository.
+1. Create a folder, then go to it:
+   ```bash
+   cd path/to/your/folder
+   ```
+2. Clone or download this repository.
    ```bash
    git clone https://github.com/agapoov/pdf_to_toc.git
    ```
-2. Navigate to the project directory.
-3. Install the required library:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
 
 ## Usage
 
@@ -34,11 +32,16 @@ A simple Python script to extract the table of contents (TOC) from PDF files and
    ```bash
    python -m venv venv
    ```
-5. Run project:
+5. Install the required library:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+6. Run project:
    ```bash
     python pdf_to_toc_extractor.py
    ```
-6. Follow the prompts to enter the PDF file path and the output JSON file path (default: `structure.json`).
+7. Follow the prompts to enter the PDF file path and the output JSON file path (default: `structure.json`).
 
 ## Example
 
