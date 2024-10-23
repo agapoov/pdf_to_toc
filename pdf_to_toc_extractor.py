@@ -63,5 +63,7 @@ if __name__ == "__main__":
 
     if not os.path.isfile(input_pdf_file_path):
         print(f'[-] Error: File with path "{input_pdf_file_path}" does not exist. Try removing quotes in the file path')
+    elif not input_pdf_file_path.lower().endswith('.pdf'):
+        print('[-] Error: The specified file is not a PDF.')
     else:
         save_to_file(input_pdf_file_path, input_output_path)
