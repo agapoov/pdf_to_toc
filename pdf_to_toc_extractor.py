@@ -1,6 +1,6 @@
 import json
 import fitz
-
+import os
 
 class Section:
     """Represents a section with a title, page, and subdivisions."""
@@ -46,13 +46,21 @@ def pdf_to_toc(pdf_file_path):
     return main_section.render_to_dict()
 
 
-pdf_file_path = input("[+] Enter the path to the PDF file: ").strip()
 
-result = pdf_to_toc(pdf_file_path)
+def save_to_file(pdf_file_path, output_path):
+    """Save in json format"""
+    result = pdf_to_toc(pdf_file_path)
+    with open(output_path, "w", encoding="utf-8") as file:
+        json.dump(result, file, ensure_ascii=False, indent=4)
+    print(f"[+] TOC structure saved to {output_path}")
 
-output_file = "structure.json"
-
-with open(output_file, "w", encoding="utf-8") as f:
-    json.dump(result, f, ensure_ascii=False, indent=4)  # Save to 'structure.json'
-
-print(f"[+] Successfully saved to {output_file}")
+if __name__ == "__main__":
+    pdf_file_path = input("[+] Enter the PDF file path: ").strip()
+    output_path = input("[+] Enter the output JSON file path(default: structure.json): ").strip()
+    if not output_path:
+        output_path = 'structure.json'
+    
+    if not os.path.isfile(pdf_file_path):
+        print(f'[-] Error: File with path "{pdf_file_path}" does not exist. Try removing quotes in the file path')
+    else:
+        save_to_file(pdf_file_path, output_path)
