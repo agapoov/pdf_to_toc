@@ -11,7 +11,7 @@ A simple Python script to extract the table of contents (TOC) from PDF files and
 
 1. Clone or download this repository.
    ```bash
-   git clone ...
+   git clone https://github.com/agapoov/pdf_to_toc.git
    ```
 2. Navigate to the project directory.
 3. Install the required library:
