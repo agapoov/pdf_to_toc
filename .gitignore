@@ -1,0 +1,5 @@
+.vscode
+.vscode/
+pyvenv.cfg
+venv/
+venv
